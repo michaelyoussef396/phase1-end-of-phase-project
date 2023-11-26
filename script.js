@@ -14,11 +14,16 @@ function findMovies(){
     let SearchTerm = (movieSearchBox.value).trim();
     if(searchTerm.length > 0){
         searchList.classList.remove('hide-search-list');
+        loadMovies(searchTerm);
     } else {
         searchList.classList.add('hide-search-list');
     }
 }
 
 function displayMovieList(movies){
-
+    searchList.innerHTML = "";
+    for(let idx = 0; idx < movies.length; idx++){
+        let movieListItem = document.createElement('div');
+        console.log(movieListItem);
+    }
 }
