@@ -9,3 +9,12 @@ async function loadMovies(searchTerm) {
     // console.log(data.Search);
     if(data.Response == "True") displayMovieList(data.Search);
 }
+
+function findMovies(){
+    let SearchTerm = (movieSearchBox.value);
+    console.log(searchTerm);
+}
+
+function displayMovieList(movies){
+
+}
