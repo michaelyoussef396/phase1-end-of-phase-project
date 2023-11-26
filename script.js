@@ -53,17 +53,19 @@ function displayMovieList(movies){
     loadMovieDetails();
 }
 
-function loadMovieDetails(){
+function loadMovieDetails() {
     const searchListMovies = searchList.querySelectorAll('.search-list-item');
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
-            // console.log(movie.dataset.id);
             searchList.classList.add('hide-search-list');
-            movieSearchBox.value = "";
+            movieSearchBox.value = '';
             const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
             const movieDetails = await result.json();
-            // console.log(movieDetails);
             displayMovieDetails(movieDetails);
+            
+            const clonedMovie = movie.cloneNode(true);
+            clonedMovie.removeEventListener('click', null);
+            favoriteMoviesContainer.appendChild(clonedMovie);
         });
     });
 }
@@ -129,4 +131,29 @@ toggleViewButton.addEventListener('click', toggleView);
 function toggleView() {
     isGridView = !isGridView;
     resultGrid.classList.toggle('list-view', !isGridView);
+}
+
+function sortMovies() {
+    const sortSelect = document.getElementById('sort-movies');
+    const sortBy = sortSelect.value;
+    
+    const movies = Array.from(document.querySelectorAll('.search-list-item'));
+    const sortedMovies = movies.sort((a, b) => {
+        const movieA = a.querySelector('.search-item-info h3').textContent;
+        const movieB = b.querySelector('.search-item-info h3').textContent;
+        
+        if (sortBy === 'title') {
+            return movieA.localeCompare(movieB);
+        } else if (sortBy === 'year') {
+            const yearA = a.querySelector('.search-item-info p').textContent;
+            const yearB = b.querySelector('.search-item-info p').textContent;
+            return parseInt(yearA) - parseInt(yearB);
+        }
+    });
+
+    const searchList = document.getElementById('search-list');
+    searchList.innerHTML = '';
+    sortedMovies.forEach(movie => {
+        searchList.appendChild(movie);
+    });
 }
