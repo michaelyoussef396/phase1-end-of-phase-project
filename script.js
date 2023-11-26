@@ -3,25 +3,31 @@ const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
 async function loadMovies(searchTerm) {
-    const URL = `http://www.omdbapi.com/?s=${searchTerm}&apikey=857379f2`;
-    const res = await fetch(URL);
-    const data = await res.json();
-    // console.log(data.Search);
-    if (data.Response == "True") {
-        displayMovieList(data.Search);
+    try {
+        const URL = `https://www.omdbapi.com/?s=${searchTerm}&apikey=857379f2`;
+        const res = await fetch(URL);
+        const data = await res.json();
+        
+        if (data.Response === "True") {
+            displayMovieList(data.Search);
+        } else {
+            
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
     }
 }
 
 function findMovies() {
-    let searchTerm = (movieSearchBox.value).trim(); 
-    if (searchTerm.length > 0) {
-        searchList.classList.remove('hide-search-list');
+    const searchTerm = movieSearchBox.value.trim();
+    const hasInput = searchTerm.length > 0;
+    
+    searchList.classList.toggle('hide-search-list', !hasInput);
+    
+    if (hasInput) {
         loadMovies(searchTerm);
-    } else {
-        searchList.classList.add('hide-search-list');
     }
 }
-
 function displayMovieList(movies){
     searchList.innerHTML = "";
     for(let idx = 0; idx < movies.length; idx++){
@@ -89,3 +95,27 @@ window.addEventListener('click', (event) => {
         searchList.classList.add('hide-search-list');
     }
 });
+
+
+function toggleDarkMode() {
+    const body = document.body;
+    const isDarkMode = body.classList.toggle('dark-mode');
+    saveDarkModePreference(isDarkMode); // Save the dark mode preference in local storage
+}
+
+function saveDarkModePreference(isDarkMode) {
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+function applySavedDarkMode() {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    const body = document.body;
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+}
+
+
+window.addEventListener('DOMContentLoaded', applySavedDarkMode);

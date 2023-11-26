@@ -295,3 +295,94 @@ img{
         margin-left: 0;
     }
 }
+
+.dark-mode {
+    background-color: #171717;
+    color: #fff;
+}
+
+.wrapper {
+    background-color: #171717;
+}
+
+.logo p {
+    color: #fff;
+}
+
+.logo p span {
+    color: #d4aa11;
+}
+
+.search-container {
+    background-color: #1d1d1d;
+}
+
+.search-element h3 {
+    color: #fff;
+}
+
+.search-element .form-control {
+    background-color: #292929;
+    color: #fff;
+}
+
+.search-list .search-list-item {
+    background-color: #292929;
+    color: #fff;
+}
+
+.search-list .search-list-item:hover {
+    background-color: #1f1f1f;
+}
+
+.movie-info {
+    color: #fff;
+}
+
+.movie-info .movie-title {
+    color: #d4aa11;
+}
+
+.movie-info .year {
+    color: #fff;
+    font-weight: 500;
+}
+
+.movie-info .rated {
+    background-color: #d4aa11;
+    color: #171717;
+    padding: 0.4rem;
+    margin: 0 0.4rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.movie-info .released {
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.movie-info .genre {
+    background-color: #292929;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.movie-info .language {
+    color: #d4aa11;
+    font-style: italic;
+}
+
+.movie-info .awards {
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.movie-info .awards i {
+    color: #d4aa11;
+    margin: 1rem 0.7rem 0 0;
+}
