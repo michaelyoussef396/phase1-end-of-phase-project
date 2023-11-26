@@ -47,13 +47,16 @@ function displayMovieList(movies){
     loadMovieDetails();
 }
 
-function loadMovieDetails() {
-    const searchList = document.getElementById('yourSearchListId');
+function loadMovieDetails(){
     const searchListMovies = searchList.querySelectorAll('.search-list-item');
-    
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
-            console.log(movie.dataset.id);
-        });
+            // console.log(movie.dataset.id);
+            searchList.classList.add('hide-search-list');
+            movieSearchBox.value = "";
+            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
+            const movieDetails = await result.json();
+            console.log(movieDetails);
     });
+});
 }
