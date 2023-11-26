@@ -386,3 +386,12 @@ img{
     color: #d4aa11;
     margin: 1rem 0.7rem 0 0;
 }
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.result-grid.list-view {
+    display: block;
+}

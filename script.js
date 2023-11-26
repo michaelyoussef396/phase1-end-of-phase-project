@@ -119,3 +119,14 @@ function applySavedDarkMode() {
 
 
 window.addEventListener('DOMContentLoaded', applySavedDarkMode);
+
+
+const toggleViewButton = document.getElementById('toggle-view-button');
+let isGridView = true; 
+
+toggleViewButton.addEventListener('click', toggleView);
+
+function toggleView() {
+    isGridView = !isGridView;
+    resultGrid.classList.toggle('list-view', !isGridView);
+}
