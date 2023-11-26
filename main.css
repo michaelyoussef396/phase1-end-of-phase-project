@@ -163,12 +163,14 @@ img{
     max-width: 300px;
     margin: 0 auto;
     border: 4px solid #fff;
+    align-self: flex-start;
 }
 
 .movie-info{
     text-align: center;
     color: #fff;
     padding-top: 3rem;
+    margin-top: 20px; 
 }
 
 /* movie info stylings */
@@ -191,6 +193,7 @@ img{
 }
 .movie-info .year{
     font-weight: 500;
+    text-align: center;
 }
 .movie-info .rated{
     background-color: var(--yellow-color);
@@ -395,3 +398,11 @@ img{
 .result-grid.list-view {
     display: block;
 }
+
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+

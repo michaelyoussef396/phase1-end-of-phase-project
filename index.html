@@ -36,6 +36,13 @@
                 <input type="text" class="form-control" placeholder="Search Movie Title ..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
                 <div class="search-list hide-search-list" id="search-list"></div>
             </div>
+            <div class="search-element">
+                <label for="sort-movies">Sort By:</label>
+                <select id="sort-movies" onchange="sortMovies()">
+                    <option value="year">Year</option>
+                    <option value="title">Title</option>
+                </select>
+            </div>
         </div>
         <!-- end of search container -->
 
@@ -48,7 +55,10 @@
         <!-- end of result container -->
     </div>
 
-    
+    <div class="container">
+        <h2>Favorite Movies</h2>
+        <div class="favorite-movies" id="favorite-movies"></div>
+    </div>
 
     <!-- movie app js -->
     <script src="script.js"></script>
