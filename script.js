@@ -11,8 +11,12 @@ async function loadMovies(searchTerm) {
 }
 
 function findMovies(){
-    let SearchTerm = (movieSearchBox.value);
-    console.log(searchTerm);
+    let SearchTerm = (movieSearchBox.value).trim();
+    if(searchTerm.length > 0){
+        searchList.classList.remove('hide-search-list');
+    } else {
+        searchList.classList.add('hide-search-list');
+    }
 }
 
 function displayMovieList(movies){
