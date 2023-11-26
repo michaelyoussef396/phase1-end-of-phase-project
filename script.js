@@ -46,3 +46,14 @@ function displayMovieList(movies){
     }
     loadMovieDetails();
 }
+
+function loadMovieDetails() {
+    const searchList = document.getElementById('yourSearchListId');
+    const searchListMovies = searchList.querySelectorAll('.search-list-item');
+    
+    searchListMovies.forEach(movie => {
+        movie.addEventListener('click', async () => {
+            console.log(movie.dataset.id);
+        });
+    });
+}
