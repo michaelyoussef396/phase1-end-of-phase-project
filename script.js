@@ -46,7 +46,3 @@ function displayMovieList(movies){
     }
     loadMovieDetails();
 }
-
-
-
-
