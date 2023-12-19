@@ -68,14 +68,10 @@ searchButton.addEventListener('click', handleSearch);
 
 function adjustContainerHeight() {
     const currentWidth = window.innerWidth;
-    if (currentWidth < 600) {
-        container.style.height = 'auto';
+    if (error404.classList.contains('active')) {
+        container.style.height = '435px';
     } else {
-        if (error404.classList.contains('active')) {
-            container.style.height = '435px';
-        } else if (weatherBox.classList.contains('active')) {
-            container.style.height = '585px';
-        }
+        container.style.height = '585px';
     }
 }
 
