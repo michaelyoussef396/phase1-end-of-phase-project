@@ -2,65 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FilmScope</title>
-    <!-- font awesome icons cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- custom css -->
+    <title>Weather App</title>
     <link rel="stylesheet" href="main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
-    <div class="wrapper">
-        <!-- logo -->
-        <div class="logo">
-            <div class="container">
-                <p>Film<span>Scope.</span></p>
-            </div>
-        </div>
-        <!-- end of logo -->
-
-        <div class="container">
-            <button id="toggle-view-button">Toggle View</button>
-            <div class="result-container">
-                <div class="result-grid" id="result-grid"></div>
-            </div>
-        </div>
-
-        <!-- search container -->
-        <div class="search-container">
-            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-            <div class="search-element">
-                <label for="movie-search-box">Search Movie:</label>
-                <input type="text" class="form-control" placeholder="Search Movie Title ..." id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
-                <div class="search-list hide-search-list" id="search-list"></div>
-            </div>
-        </div>
-        <!-- end of search container -->
-
-        <!-- result container -->
-        <div class="container">
-            <div class="result-container">
-                <div class="result-grid" id="result-grid"></div>
-            </div>
-        </div>
-        <!-- end of result container -->
-    </div>
-
     <div class="container">
-        <div class="favorite-controls">
-            <h2>Favorite Movies</h2>
-            <label for="sort-favorites">Sort By:</label>
-            <select id="sort-favorites" onchange="sortFavorites()">
-                <option value="title">Title</option>
-            </select>
+        <div class="search-box">
+            <i class='bx bx-map' ></i>
+            <input type="text" placeholder="Enter Your Location">
+            <button class='bx bx-search-alt-2'></button>
         </div>
-        <div class="favorite-movies" id="favorite-movies"></div>
-        <div class="liked-posters" id="liked-posters"></div>
-    </div>
 
-    <!-- movie app js -->
+        <p class="city-hide">city hide</p>
+        
+        <div class="weather-box">
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <img src="images/sunny.png" alt="clear">
+                        <p class="temperature">16<span>°C</span></p>
+                        <p class="description">Sunny</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather-details">
+            <div class="humidity">
+                <i class='bx bx-water' ></i>
+                <div class="text">
+                    <div class="info-humidity">
+                        <span>0%</span>
+                    </div>
+                    <p>Humidity</p>
+                </div>
+            </div>
+
+            <div class="wind">
+                <i class='bx bx-wind' ></i>
+                <div class="text">
+                    <div class="info-wind">
+                        <span>0km/h</span>
+                    </div>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found">
+            <div class="box">
+                <img src="images/404.png">
+                <p>Ooops! Location not found!</p>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

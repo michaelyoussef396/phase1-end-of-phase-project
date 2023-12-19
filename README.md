@@ -1,32 +1,23 @@
-# FilmScope
-
-FilmScope is a movie search application built using HTML, CSS, and JavaScript. It allows users to search for movies, view details, and add them to favorites.
+Intuitive weather application built using HTML, CSS, and JavaScript. It enables users to search for current weather conditions in various locations around the world.
 
 ## Features
+- Search Weather: Users can search for weather conditions in any location using the search box.
+- Dynamic Weather Display: The app displays weather conditions like temperature, humidity, wind speed, and a corresponding weather icon.
+- Error Handling: If a location is not found, the app displays an appropriate error message.
+- Responsive Design: The application adjusts its layout responsively for optimal viewing on different devices.
 
-- **Search Movies**: Search for movies using the provided search box.
-- **View Details**: Click on a movie to view its details.
-- **Add to Favorites**: Add movies to your favorites list.
-- **Dark/Light Mode**: Toggle between dark and light themes for better viewing.
 
 ## Installation
-
-There's no installation needed to run this application.
+- No installation is required to run WeatherWise.
 
 ## API Integration
-
-This app integrates with the OMDB API to fetch movie data. For the movie posters, the images were sourced from external providers:
-
-- The Guardians of the Galaxy image is sourced from Wikipedia: [Guardians of the Galaxy Vol. 2 Poster](https://upload.wikimedia.org/wikipedia/en/3/32/Guardians_of_the_Galaxy_Vol._2_poster.jpg)
-- The second image used is sourced from Arts Mid North Coast: [no-image-available-icon-6 | Arts Mid North Coast](https://artsmidnorthcoast.com/wp-content/uploads/2014/05/no-image-available-icon-6-300x188.png)
+- WeatherWise utilizes the OpenWeatherMap API to fetch real-time weather data. The API provides comprehensive weather information based on the user's query.
 
 ## How to Use
+- Download or clone the repository to your local machine.
+- Open index.html in a web browser.
+- Enter a location in the search box and click the search icon to view the weather.
+- The app will display the current weather conditions.
 
-- Clone this repository.
-- Open `index.html` in your preferred browser.
-- Search for movies using the search box and explore movie details.
-- Add movies to your favorites by clicking the "Add to Favorites" button.
-
-## Contributions
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
+## Contact
+- For any inquiries or suggestions, please open an issue on the project's GitHub page.
