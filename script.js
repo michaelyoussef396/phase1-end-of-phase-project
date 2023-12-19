@@ -27,7 +27,6 @@ function handleSearch() {
         .then(res => res.json())
         .then(data => {
             if (data.cod == '404') {
-                // Error handling
                 cityHide.textContent = city;
                 weatherBox.classList.remove('active');
                 weatherDetails.classList.remove('active');
@@ -42,16 +41,14 @@ function handleSearch() {
             const humidity = weatherDetails.querySelector('.humidity span');
             const wind = weatherDetails.querySelector('.wind span');
 
-            if (cityHide.textContent !== city) {
-                cityHide.textContent = city;
-                weatherBox.classList.add('active');
-                weatherDetails.classList.add('active');
-                error404.classList.remove('active');
-                setTimeout(() => {
-                    container.classList.remove('active');
-                }, 2500);
-                adjustContainerHeight();
-            }
+            cityHide.textContent = city;
+            weatherBox.classList.add('active');
+            weatherDetails.classList.add('active');
+            error404.classList.remove('active');
+            setTimeout(() => {
+                container.classList.remove('active');
+            }, 2500);
+            adjustContainerHeight();
 
             const currentCondition = data.weather[0].main;
             const weatherIcon = weatherConditions.find(condition => condition.condition === currentCondition)?.icon || 'images/default.png';
@@ -62,6 +59,9 @@ function handleSearch() {
             humidity.innerHTML = `${data.main.humidity}%`;
             wind.innerHTML = `${Math.round(data.wind.speed)}km/h`;
         })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
 }
 
 searchButton.addEventListener('click', handleSearch);
